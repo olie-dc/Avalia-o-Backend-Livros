@@ -1,22 +1,30 @@
-<html lang='en'>
-
+<html lang="pt-br">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <link rel='stylesheet' href='/css/styles.css' />
-    <title>Books</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Gerenciador de Livros</title>
   </head>
 
   <body>
-    {{#unless isLoginPage}}
+    {{#unless isLoginPage}} <!-- Verifica se a página não é a de login -->
+      <header>
+        <h1>Gerenciador de Livros</h1>
+        <nav>
+          <a href="/books">Lista de Livros</a>
+          <a href="/books/add-book">Adicionar Livro</a>
+          <a href="/books/lidos-book">Livros Lidos</a>
+          <a href="/logout">Logout</a>
+        </nav>
+      </header>
+    {{/unless}} <!-- Fim da verificação -->
 
-    {{/unless}}
     <main>
       {{{body}}}
     </main>
+
     <footer>
       <p>&copy; 2024 Gerenciador de Livros. Todos os direitos reservados.</p>
     </footer>
   </body>
-
 </html>
