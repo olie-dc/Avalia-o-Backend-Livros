@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Livros</title>
+</head>
+<body>
+  <h1>Lista de Livros</h1>
+  <ul>
+    {{#each books}}
+      <li>{{this.title}} - {{this.author}}
+        <a href="/books/{{this.id}}">Ver detalhes</a> |
+        <a href="/books/edit/{{this.id}}">Editar</a> |
+        <form action="/books/delete/{{this.id}}" method="POST" style="display:inline;">
+          <button type="submit">Deletar</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+  <a href="/books/add-book">Adicionar novo livro</a>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>{{book.title}}</h1>
+
+<p><strong>Autor:</strong> {{book.author}}</p>
+<p><strong>Descrição:</strong> {{book.description}}</p>
+<p><strong>Ano de Publicação:</strong> {{book.year}}</p>
+<p><strong>Gênero:</strong> {{book.genre}}</p>
+
+<p><strong>Status:</strong> {{#if book.read}}Lido{{else}}Não Lido{{/if}}</p>
+
+<form action="/books/mark-read/{{book.id}}" method="POST">
+  <button type="submit" class="btn btn-success">
+    {{#if book.read}}Marcar como Não Lido{{else}}Marcar como Lido{{/if}}
+  </button>
+</form>
+
+<a href="/books/edit/{{book.id}}" class="btn btn-warning">Editar</a>
+<a href="/books" class="btn btn-secondary">Voltar</a>
